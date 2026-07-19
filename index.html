@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROE — Создание сайтов</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ============================================================ -->
+    <!-- ПРЕЛОАДЕР (ЭКРАН ЗАГРУЗКИ) -->
+    <!-- ============================================================ -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-container">
+            <div class="preloader-logo">
+                <img src="images/logo.svg" alt="ROE" width="80" height="84">
+                <span class="preloader-name">ROE</span>
+            </div>
+            <div class="preloader-spinner">
+                <div class="preloader-ring"></div>
+                <div class="preloader-ring"></div>
+                <div class="preloader-ring"></div>
+            </div>
+            <div class="preloader-progress">
+                <div class="preloader-progress-bar" id="progressBar"></div>
+            </div>
+            <p class="preloader-text">Загрузка...</p>
+        </div>
+    </div>
+    <!-- 3D ФОН (Светлая тема) -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.48/build/spline-viewer.js"></script>
+    <spline-viewer 
+        url="https://prod.spline.design/bdz4UfmM8CSLD2eJ/scene.splinecode"
+        loading-anim
+        hide-background
+        class="spline-bg spline-light">
+    </spline-viewer>
+
+    <!-- 3D ФОН (Темная тема) -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.98/build/spline-viewer.js"></script>
+    <spline-viewer 
+        url="https://prod.spline.design/Q97Lg0TIYpBx0HQi/scene.splinecode"
+        loading-anim
+        hide-background
+        class="spline-bg spline-dark">
+    </spline-viewer>
+
+    <!-- ДЕКОРАТИВНЫЕ ЛИНИИ -->
+    <div class="deco-lines">
+        <div class="line line-h-1"></div>
+        <div class="line line-h-2"></div>
+        <div class="line line-h-3"></div>
+        <div class="line line-v-1"></div>
+        <div class="line line-v-2"></div>
+    </div>
+
+    <!-- СЕТКА -->
+    <div class="grid-bg"></div>
+
+    <!-- ============================================================ -->
+    <!-- МЕНЮ (ПРЕМИУМ ВЕРСИЯ) -->
+    <!-- ============================================================ -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-container">
+            <div class="header-inner">
+                <!-- Логотип -->
+                <a href="#" class="header-logo">
+                    <div class="header-logo-icon">
+                        <img src="images/logo.svg" alt="ROE" width="44" height="46">
+                    </div>
+                    <div class="header-logo-text">
+                        <span class="header-logo-name">ROE</span>
+                        <span class="header-logo-tagline">digital agency</span>
+                    </div>
+                </a>
+
+                <!-- Основная навигация -->
+                <nav class="header-nav" id="headerNav">
+                    <ul class="header-nav-list">
+                        <li><a href="#" class="header-nav-link active" data-section="home">
+                            <span class="nav-link-dot"></span>
+                            Главная
+                        </a></li>
+                        <li><a href="#" class="header-nav-link" data-section="projects">
+                            <span class="nav-link-dot"></span>
+                            Проекты
+                        </a></li>
+                        <li><a href="#" class="header-nav-link" data-section="services">
+                            <span class="nav-link-dot"></span>
+                            Услуги
+                        </a></li>
+                        <li><a href="#" class="header-nav-link" data-section="about">
+                            <span class="nav-link-dot"></span>
+                            О нас
+                        </a></li>
+                        <li><a href="#" class="header-nav-link" data-section="contacts">
+                            <span class="nav-link-dot"></span>
+                            Контакты
+                        </a></li>
+                    </ul>
+                </nav>
+
+                <!-- Правая часть -->
+                <div class="header-actions">
+                    <!-- Поиск -->
+                    <button class="header-action-btn header-search" id="headerSearch" aria-label="Поиск">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                    </button>
+
+                    <!-- Телефон -->
+                    <a href="tel:+79610048693" class="header-phone">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span>+7 (961) 004-86-93</span>
+                    </a>
+
+                    <!-- Кнопка проекта -->
+                    <a href="#" class="header-btn-primary modal-trigger">
+                        <span>Обсудить проект</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </a>
+
+                    <!-- Переключатель темы -->
+                    <button class="header-theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                        <svg class="theme-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        <svg class="theme-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Бургер -->
+                    <button class="header-burger" id="burgerMenu" aria-label="Открыть меню">
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- МОБИЛЬНОЕ МЕНЮ (СЛАЙД-АУТ) -->
+    <!-- ============================================================ -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu" id="mobileMenu">
+            <!-- Шапка -->
+            <div class="mobile-menu-header">
+                <a href="#" class="mobile-menu-logo">
+                    <img src="images/logo.svg" alt="ROE" width="40" height="42">
+                    <span>ROE</span>
+                </a>
+                <button class="mobile-menu-close" id="mobileMenuClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Навигация -->
+            <nav class="mobile-menu-nav">
+                <ul class="mobile-menu-list">
+                    <li><a href="#" class="mobile-menu-link active">Главная</a></li>
+                    <li><a href="#" class="mobile-menu-link">Наши проекты</a></li>
+                    <li><a href="#" class="mobile-menu-link">Наши услуги</a></li>
+                    <li><a href="#" class="mobile-menu-link">Почему мы</a></li>
+                    <li><a href="#" class="mobile-menu-link">Позвони нам</a></li>
+                    <li><a href="#" class="mobile-menu-link">Что гарантируем</a></li>
+                </ul>
+            </nav>
+
+            <!-- Подвал -->
+            <div class="mobile-menu-footer">
+                <div class="mobile-menu-contacts">
+                    <a href="tel:+79610048693" class="mobile-menu-phone">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        +7 (961) 004-86-93
+                    </a>
+                    <a href="mailto:info@example.com" class="mobile-menu-email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        info@example.com
+                    </a>
+                </div>
+
+                <a href="#" class="mobile-menu-btn modal-trigger">Обсудить проект</a>
+
+                <div class="mobile-menu-social">
+                    <a href="#" aria-label="Telegram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="WhatsApp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ПОИСКОВАЯ СТРОКА (ВЫПАДАЮЩАЯ) -->
+    <!-- ============================================================ -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <form class="search-form" id="searchForm">
+                <input type="text" class="search-input" placeholder="Поиск по сайту..." autofocus>
+                <button type="submit" class="search-submit">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </button>
+            </form>
+            <button class="search-close" id="searchClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ГЕРОЙ БЛОК -->
+    <!-- ============================================================ -->
+    <div class="hero-wrapper">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Профессиональное создание <br>сайтов, которые 
+                    <span class="highlight">работают на вас</span>
+                </h1>
+                <div class="hero-buttons">
+                    <a href="#" class="hero-btn-primary modal-trigger">
+                        Обсудить проект
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="#" class="hero-btn-secondary">Цены</a>
+                </div>
+            </div>
+            
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide active">
+                            <img src="images/galer1.png" alt="Слайд 1" class="slide-image">
+                        </div>
+                        <div class="slide">
+                            <img src="images/galer2.png" alt="Слайд 2" class="slide-image">
+                        </div>
+                        <div class="slide">
+                            <img src="images/galer3.png" alt="Слайд 3" class="slide-image">
+                        </div>
+                        <div class="slide">
+                            <img src="images/galer4.png" alt="Слайд 4" class="slide-image">
+                        </div>
+                        <div class="slide">
+                            <img src="images/galer1.png" alt="Слайд 5" class="slide-image">
+                        </div>
+                    </div>
+                    <div class="dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                        <span class="dot" data-slide="4"></span>
+                    </div>
+                </div>
+                <div class="hero-decor"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- БЛОК: О НАС -->
+    <!-- ============================================================ -->
+    <section class="about-section">
+        <div class="container-about">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-tag">О нас</span>
+                    <h2 class="section-title">
+                        Создаём цифровые <br>продукты, которые <br><span class="gradient-text">меняют рынок</span>
+                    </h2>
+                    <p class="section-description">
+                        Мы — команда разработчиков и дизайнеров с 6-летним опытом. 
+                        Создаём сложные веб-сервисы, мобильные приложения и 
+                        дизайн-системы для крупного бизнеса.
+                    </p>
+                    <a href="#" class="about-link">Подробнее о нас →</a>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card stat-card-highlight">
+                        <span class="stat-number">6+</span>
+                        <span class="stat-label">Лет на рынке</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">120+</span>
+                        <span class="stat-label">Завершённых проектов</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Экспертов в команде</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Довольных клиентов</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- БЛОК: УСЛУГИ -->
+    <!-- ============================================================ -->
+    <section class="services-section">
+        <div class="container-services">
+            <div class="services-header-block">
+                <span class="section-tag">Услуги</span>
+                <h2 class="section-title">
+                    Что мы <br><span class="gradient-text">предлагаем</span>
+                </h2>
+                <p class="section-description">
+                    Разрабатываем цифровые продукты полного цикла — от идеи до запуска и поддержки
+                </p>
+            </div>
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-item-content">
+                        <div class="service-icon-wrapper">
+                            <img src="images/planeta.svg" alt="Веб-разработка" class="service-icon-img">
+                        </div>
+                        <div class="service-info">
+                            <h3 class="service-name">Веб-разработка</h3>
+                            <p class="service-desc">Сайты, порталы, CRM, интернет-магазины</p>
+                        </div>
+                    </div>
+                    <a href="#" class="service-link">Подробнее →</a>
+                </div>
+                <div class="service-item">
+                    <div class="service-item-content">
+                        <div class="service-icon-wrapper">
+                            <img src="images/iphone.svg" alt="Мобильные приложения" class="service-icon-img">
+                        </div>
+                        <div class="service-info">
+                            <h3 class="service-name">Мобильные приложения</h3>
+                            <p class="service-desc">Нативные и кроссплатформенные приложения</p>
+                        </div>
+                    </div>
+                    <a href="#" class="service-link">Подробнее →</a>
+                </div>
+                <div class="service-item">
+                    <div class="service-item-content">
+                        <div class="service-icon-wrapper">
+                            <img src="images/palitra.svg" alt="UI/UX дизайн" class="service-icon-img">
+                        </div>
+                        <div class="service-info">
+                            <h3 class="service-name">UI/UX дизайн</h3>
+                            <p class="service-desc">Дизайн-системы, прототипы, интерфейсы</p>
+                        </div>
+                    </div>
+                    <a href="#" class="service-link">Подробнее →</a>
+                </div>
+                <div class="service-item">
+                    <div class="service-item-content">
+                        <div class="service-icon-wrapper">
+                            <img src="images/nauhnici.svg" alt="Техподдержка" class="service-icon-img">
+                        </div>
+                        <div class="service-info">
+                            <h3 class="service-name">Техподдержка</h3>
+                            <p class="service-desc">Обновления, мониторинг, консультации 24/7</p>
+                        </div>
+                    </div>
+                    <a href="#" class="service-link">Подробнее →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- БЛОК: ПОЧЕМУ МЫ -->
+    <!-- ============================================================ -->
+    <section class="why-section">
+        <div class="container-why">
+            <div class="why-header">
+                <span class="section-tag">Преимущества</span>
+                <h2 class="section-title">
+                    Почему <span class="gradient-text">выбирают нас</span>
+                </h2>
+                <p class="section-description">
+                    Мы создаём продукты, которые решают задачи бизнеса
+                </p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <span class="why-number">01</span>
+                    <div class="why-icon-wrapper">
+                        <img src="images/raceta.svg" alt="Быстрая разработка" class="why-icon-img">
+                    </div>
+                    <h3 class="why-name">Быстрая разработка</h3>
+                    <p class="why-desc">Создаём MVP за 2-3 недели. Оптимизируем процессы для скорости</p>
+                    <div class="why-line"></div>
+                </div>
+                <div class="why-card why-card-highlight">
+                    <span class="why-number">02</span>
+                    <div class="why-icon-wrapper">
+                        <img src="images/lampocha.svg" alt="Индивидуальный подход" class="why-icon-img">
+                    </div>
+                    <h3 class="why-name">Индивидуальный подход</h3>
+                    <p class="why-desc">Изучаем бизнес-задачи и предлагаем решения под ваш бюджет</p>
+                    <div class="why-line"></div>
+                </div>
+                <div class="why-card">
+                    <span class="why-number">03</span>
+                    <div class="why-icon-wrapper">
+                        <img src="images/zamok.svg" alt="Надёжность" class="why-icon-img">
+                    </div>
+                    <h3 class="why-name">Надёжность</h3>
+                    <p class="why-desc">Все проекты проходят тестирование и защищены от угроз</p>
+                    <div class="why-line"></div>
+                </div>
+                <div class="why-card why-card-highlight">
+                    <span class="why-number">04</span>
+                    <div class="why-icon-wrapper">
+                        <img src="images/telephone.svg" alt="Поддержка 24/7" class="why-icon-img">
+                    </div>
+                    <h3 class="why-name">Поддержка 24/7</h3>
+                    <p class="why-desc">Всегда на связи. Обновления, доработки и консультации</p>
+                    <div class="why-line"></div>
+                </div>
+                <div class="why-card">
+                    <span class="why-number">05</span>
+                    <div class="why-icon-wrapper">
+                        <img src="images/moneta.svg" alt="Прозрачные цены" class="why-icon-img">
+                    </div>
+                    <h3 class="why-name">Прозрачные цены</h3>
+                    <p class="why-desc">Фиксированная стоимость. Без скрытых платежей и переплат</p>
+                    <div class="why-line"></div>
+                </div>
+                <div class="why-card why-card-highlight">
+                    <span class="why-number">06</span>
+                    <div class="why-icon-wrapper">
+                        <img src="images/kuboc.svg" alt="Опыт 6+ лет" class="why-icon-img">
+                    </div>
+                    <h3 class="why-name">Опыт 6+ лет</h3>
+                    <p class="why-desc">Реализовали 120+ проектов для бизнеса разного масштаба</p>
+                    <div class="why-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- БЛОК: ПРОЦЕСС РАБОТЫ -->
+    <!-- ============================================================ -->
+    <section class="process-section">
+        <div class="container-process">
+            <div class="process-header">
+                <span class="section-tag">Как мы работаем</span>
+                <h2 class="section-title">
+                    Процесс <span class="gradient-text">создания</span>
+                </h2>
+                <p class="section-description">
+                    От идеи до запуска — мы рядом на каждом этапе
+                </p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <span class="process-step-number">01</span>
+                    <span class="process-step-icon">
+                        <img src="images/lampocha.svg" alt="Идея" class="process-icon-img">
+                    </span>
+                    <h3 class="process-step-name">Идея</h3>
+                    <p class="process-step-desc">Анализируем задачу, изучаем рынок и конкурентов</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-step-number">02</span>
+                    <span class="process-step-icon">
+                        <img src="images/tetradi.svg" alt="Проектирование" class="process-icon-img">
+                    </span>
+                    <h3 class="process-step-name">Проектирование</h3>
+                    <p class="process-step-desc">Создаём прототипы, архитектуру и выбираем технологии</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-step-number">03</span>
+                    <span class="process-step-icon">
+                        <img src="images/palitra.svg" alt="Дизайн" class="process-icon-img">
+                    </span>
+                    <h3 class="process-step-name">Дизайн</h3>
+                    <p class="process-step-desc">Разрабатываем интерфейсы и дизайн-систему</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-step-number">04</span>
+                    <span class="process-step-icon">
+                        <img src="images/noutbuck.svg" alt="Разработка" class="process-icon-img">
+                    </span>
+                    <h3 class="process-step-name">Разработка</h3>
+                    <p class="process-step-desc">Пишем код, тестируем и интегрируем</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-step-number">05</span>
+                    <span class="process-step-icon">
+                        <img src="images/raceta.svg" alt="Запуск" class="process-icon-img">
+                    </span>
+                    <h3 class="process-step-name">Запуск</h3>
+                    <p class="process-step-desc">Деплоим, запускаем и передаём в поддержку</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- БЛОК: НАШИ ПРОЕКТЫ -->
+    <!-- ============================================================ -->
+    <section class="projects-section">
+        <div class="container-projects">
+            <div class="projects-header-block">
+                <span class="section-tag">Портфолио</span>
+                <h2 class="section-title">
+                    Наши <span class="gradient-text">проекты</span>
+                </h2>
+                <p class="section-description">
+                    Реализованные проекты, которыми мы гордимся
+                </p>
+            </div>
+
+            <div class="projects-grid-new">
+                <!-- Проект 1 (крупный) -->
+                <div class="project-card-new project-card-new-large">
+                    <div class="project-card-new-image">
+                        <img src="images/portfolio1.jpg" alt="Доставка еды" class="project-card-new-img">
+                        <div class="project-card-new-overlay">
+                            <span class="project-card-new-tag">Мобильное приложение</span>
+                            <h3 class="project-card-new-name">Доставка еды</h3>
+                            <p class="project-card-new-desc">Приложение с AI-рекомендациями для сети ресторанов</p>
+                            <a href="#" class="project-card-new-link">Смотреть проект </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Проект 2 -->
+                <div class="project-card-new">
+                    <div class="project-card-new-image">
+                        <img src="images/portfolio2.png" alt="Интернет-магазин" class="project-card-new-img">
+                        <div class="project-card-new-overlay">
+                            <span class="project-card-new-tag">E-commerce</span>
+                            <h3 class="project-card-new-name">Интернет-магазин</h3>
+                            <a href="#" class="project-card-new-link">Смотреть </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Проект 3 -->
+                <div class="project-card-new">
+                    <div class="project-card-new-image">
+                        <img src="images/portfolio3.jpg" alt="Дизайн-система" class="project-card-new-img">
+                        <div class="project-card-new-overlay">
+                            <span class="project-card-new-tag">Дизайн-система</span>
+                            <h3 class="project-card-new-name">Банк</h3>
+                            <a href="#" class="project-card-new-link">Смотреть </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Проект 4 -->
+                <div class="project-card-new">
+                    <div class="project-card-new-image">
+                        <img src="images/portfolio4.jpg" alt="Умная CRM" class="project-card-new-img">
+                        <div class="project-card-new-overlay">
+                            <span class="project-card-new-tag">CRM</span>
+                            <h3 class="project-card-new-name">Умная CRM</h3>
+                            <a href="#" class="project-card-new-link">Смотреть </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Проект 5 -->
+                <div class="project-card-new">
+                    <div class="project-card-new-image">
+                        <img src="images/portfolio5.png" alt="FinTech MVP" class="project-card-new-img">
+                        <div class="project-card-new-overlay">
+                            <span class="project-card-new-tag">Стартап</span>
+                            <h3 class="project-card-new-name">FinTech MVP</h3>
+                            <a href="#" class="project-card-new-link">Смотреть </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- БЛОК: КОНТАКТЫ -->
+    <!-- ============================================================ -->
+    <section class="contact-section">
+        <div class="container-contact">
+            <div class="contact-header">
+                <span class="section-tag">Связаться</span>
+                <h2 class="section-title">
+                    Давайте <span class="gradient-text">обсудим</span> проект
+                </h2>
+                <p class="section-description">
+                    Оставьте заявку — мы свяжемся с вами в ближайшее время
+                </p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" placeholder="Иван Иванов" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" placeholder="+7 (___) ___-__-__">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="ivan@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" rows="4" placeholder="Расскажите о вашем проекте..." required></textarea>
+                        </div>
+                        <button type="submit" class="contact-submit">Отправить заявку</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <img src="images/telephone.svg" alt="Телефон" class="contact-icon-img">
+                        </span>
+                        <div>
+                            <h4>Телефон</h4>
+                            <a href="tel:+79610048693">+7 (961) 004-86-93</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <img src="images/pisimo.svg" alt="Email" class="contact-icon-img">
+                        </span>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:info@example.com">info@example.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <img src="images/bulavka.svg" alt="Адрес" class="contact-icon-img">
+                        </span>
+                        <div>
+                            <h4>Адрес</h4>
+                            <p>Москва, ул. Тверская, 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ПОДВАЛ -->
+    <!-- ============================================================ -->
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="footer-grid">
+                <div class="footer-col footer-col-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo.svg" alt="Логотип" width="52" height="54">
+                    </div>
+                    <p class="footer-desc">
+                        Создаём цифровые продукты, которые меняют рынок. 
+                        6+ лет опыта, 120+ проектов.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Знакомство</a></li>
+                        <li><a href="#">Наши проекты</a></li>
+                        <li><a href="#">Наши услуги</a></li>
+                        <li><a href="#">Почему мы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Услуги</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Веб-разработка</a></li>
+                        <li><a href="#">Мобильные приложения</a></li>
+                        <li><a href="#">UI/UX дизайн</a></li>
+                        <li><a href="#">Техподдержка</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Контакты</h4>
+                    <ul class="footer-links footer-contacts">
+                        <li>
+                            <span class="footer-contact-icon">
+                                <img src="images/telephone.svg" alt="Телефон" class="footer-contact-img">
+                            </span>
+                            <a href="tel:+79610048693">+7 (961) 004-86-93</a>
+                        </li>
+                        <li>
+                            <span class="footer-contact-icon">
+                                <img src="images/pisimo.svg" alt="Email" class="footer-contact-img">
+                            </span>
+                            <a href="mailto:info@example.com">info@example.com</a>
+                        </li>
+                        <li>
+                            <span class="footer-contact-icon">
+                                <img src="images/bulavka.svg" alt="Адрес" class="footer-contact-img">
+                            </span>
+                            <span>Москва, ул. Тверская, 1</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 ROE. Все права защищены.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <!-- ============================================================ -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="modal-close" id="modalClose" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-tag">Связаться</span>
+                    <h2 class="modal-title">Обсудить <span class="gradient-text">проект</span></h2>
+                    <p class="modal-desc">Заполните форму, и мы свяжемся с вами в ближайшее время</p>
+                </div>
+                <form class="modal-form" id="modalForm">
+                    <div class="modal-form-group">
+                        <label for="modalName">Ваше имя</label>
+                        <input type="text" id="modalName" placeholder="Иван Иванов" required>
+                    </div>
+                    <div class="modal-form-group">
+                        <label for="modalEmail">Email</label>
+                        <input type="email" id="modalEmail" placeholder="ivan@example.com" required>
+                    </div>
+                    <div class="modal-form-group">
+                        <label for="modalPhone">Телефон</label>
+                        <input type="tel" id="modalPhone" placeholder="+7 (___) ___-__-__">
+                    </div>
+                    <div class="modal-form-group">
+                        <label for="modalMessage">Сообщение</label>
+                        <textarea id="modalMessage" rows="4" placeholder="Расскажите о вашем проекте..." required></textarea>
+                    </div>
+                    <button type="submit" class="modal-submit">Отправить заявку</button>
+                    <p class="modal-agree">
+                        Нажимая на кнопку, вы соглашаетесь с 
+                        <a href="#">политикой обработки персональных данных</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ПЕРЕКРЫТИЕ КНОПКИ SPLINE -->
+    <div class="spline-overlay" id="splineOverlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
